@@ -1,0 +1,35 @@
+.CustName {
+  text-align: center;
+  background-color: white;
+  color: #002663;
+  justify-content: space-evenly;
+}
+hr {
+border-top: 4px solid #0394CD
+}
+label {
+  color: #046AB8;
+  font-size: 24px;
+
+}
+input {
+  background-color: white;
+  color: #046AB8;
+  border: #046AB8 3px solid;
+  border-radius: 27px;
+  font-size: 24px;
+  padding: 1vw;
+  margin: 7em 4em;
+}
+p {
+  margin: 7em 4em;
+  font-size: 24px;
+}
+button {
+  background-color: white;
+  color: #046AB8;
+  border: #046AB8 3px solid;
+  border-radius: 27px;
+  font-size: 24px;
+  padding: 1vw;
+}
