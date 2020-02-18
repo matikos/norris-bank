@@ -34,13 +34,13 @@ input {
   border-radius: 27px;
   font-size: 24px;
   padding: 3% 8%;
-  margin: 10% auto;
+  margin: 2% 0.5%;
 }
 p {
   position: relative;
   height: auto;
   width: 70%;
-  margin: 10% auto;
+  margin: 10% 10%;
   padding: 5%;
   font-size: 24px;
   color: #002663;
@@ -54,5 +54,5 @@ button {
   border-radius: 27px;
   font-size: 27px;
   padding: 3% 8%;
-  margin: 10% auto;
+  margin: 2% 0.5%;
 }

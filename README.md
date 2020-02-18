@@ -1,3 +1,25 @@
+This is a simple app using api full of Chuck Norris jokes and we know these never get old, right?
+
+On the Home screen you have 2 buttons:
+- "Random" will get you as many jokes as you can handle. One at the time.
+- "Search Joke" will take you to a screen with customized jokes.
+
+On the Custom Name screen you following:
+- text input field marked " Full Name" where you input first and second name separated by space.
+- "Search" button that will return Chuck Norris joke with name from the input suplanting that of the legend.
+- "Home" button that will take you to Home screen.
+
+Jokes are courtesy of http://www.icndb.com
+
+
+If not for Chuck Norris this app would be much better had it not taken 4s for chuck Norris to do infinity loop.
+
+
+
+Below are the boilerplate react app intructions.
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
