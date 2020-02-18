@@ -5,49 +5,63 @@ class CustomName extends Component {
   constructor(props) {
     super(props);
     this.state = { 
+        input: '',
+        names: '',
         firstName: '',
         secondName: '',
-        customJoke: '',
+        alert:  '',
+        customJoke: [],
     };
   }
   onHome = () => {
     this.props.history.push('/')
   }
 
-  handleSubmit = (event) => {
-    let firstName = event.target.value
-      .split(' ')
-      .slice(0, -1)
-      .join(' ');
+  handleChange = (e) => {
+    
+    let names = e.target.value.split(' ');
+    let firstName = names[0];
+    let secondName = names[names.length - 1];
+    
+    this.setState({
+      input: e.target.value,
+      names: names,
+      firstName: firstName,
+      secondName: secondName,
+    })
+    console.log(this.state.input)
+  }
 
-    let secondName = event.target.value
-      .split(' ')
-      .slice(-1)
-      .join(' ');
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.validateInput())
+    console.log(this.state.input)
+  }
 
-      this.setState({
-        firstName: firstName,
-        secondName: secondName,
-      })
-      console.log(this.state.firstName);
+  validateInput = (e) => {
+    if (/\S/.test(this.state.input)) {
+      return true
+    } else {
+      return false
+    }
+  }
 
-    const url = `http://api.icndb.com/jokes/random?escape=javascript?firstName=${this.state.firstName};lastName=${this.state.secondName}`;
+  searchJoke = () => {
+    this.setState({
+      input: [],
+    })
+
+    const url = `http://api.icndb.com/jokes/random?escape=javascript&firstName=${this.state.firstName}&lastName=${this.state.secondName}`;
 
     fetch(url)
-      .then((response) => {
-        return response.json();
-      })
+      .then((res) => res.json())
       .then((data) => {
         this.setState({
           customJoke: data.value.joke,
         })
       })
-      .catch((err) => {
-        console.log(err)
-      });
+      .catch((err) =>console.log(err));
   }
-
-
   
   render() {
     return (
@@ -56,14 +70,13 @@ class CustomName extends Component {
           <h1 className="Custname-title">Norris Bank</h1>
         </header>
         <hr />
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>
-            Name:
-            <input type="text" />
+            <input name="name" type="text" placeholder="Full Name" onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Search" onClick={event => this.handleSubmit(event)}/>
+          <input type="submit" value="Search" onClick={() => this.searchJoke()}/>
         </form>
-        <p>{this.state.customJoke}</p>
+        {this.validateInput ? (<p>{this.state.customJoke}</p>) : null}
         <button onClick={() => this.onHome()}>Home</button>
       </div>
     );

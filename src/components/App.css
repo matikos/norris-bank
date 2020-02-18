@@ -1,21 +1,47 @@
+@media only screen and (min-width: 375px) {
+  body {
+    background-size: contain;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: auto;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 766px) {
+
+}
+@media only screen and (min-width: 1024px) {
+  
+}
+
 .App {
   text-align: center;
   background-color: white;
   color: #002663;
   justify-content: space-evenly;
 }
+h1 {
+  font-size: 36px;
+  font-weight: 800;
+}
 hr {
 border-top: 4px solid #0394CD
 }
 p {
-  margin: 7em 4em;
+  position: relative;
+  height: auto;
+  width: 70%;
+  margin: 10% auto;
+  padding: 5%;
   font-size: 24px;
+  color: #002663;
+  background-color: aqua;
 }
 button {
   background-color: white;
   color: #046AB8;
   border: #046AB8 3px solid;
   border-radius: 27px;
-  font-size: 24px;
-  padding: 1vw;
+  font-size: 27px;
+  padding: 3% 8%;
+  margin: 10% auto;
 }

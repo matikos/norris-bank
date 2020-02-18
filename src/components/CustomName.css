@@ -1,11 +1,26 @@
+@media only screen and (min-width: 375px) {
+  body {
+    background-size: contain;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+}
+@media only screen and (min-width: 766px) {
+
+}
+@media only screen and (min-width: 1024px) {
+  
+}
 .CustName {
   text-align: center;
   background-color: white;
   color: #002663;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 hr {
 border-top: 4px solid #0394CD
+}
+form {
+  position: relative;
 }
 label {
   color: #046AB8;
@@ -18,18 +33,26 @@ input {
   border: #046AB8 3px solid;
   border-radius: 27px;
   font-size: 24px;
-  padding: 1vw;
-  margin: 7em 4em;
+  padding: 3% 8%;
+  margin: 10% auto;
 }
 p {
-  margin: 7em 4em;
+  position: relative;
+  height: auto;
+  width: 70%;
+  margin: 10% auto;
+  padding: 5%;
   font-size: 24px;
+  color: #002663;
+  background-color: aqua;
 }
+
 button {
   background-color: white;
   color: #046AB8;
   border: #046AB8 3px solid;
   border-radius: 27px;
-  font-size: 24px;
-  padding: 1vw;
+  font-size: 27px;
+  padding: 3% 8%;
+  margin: 10% auto;
 }
