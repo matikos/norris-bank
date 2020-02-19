@@ -1,9 +1,32 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { render, cleanup, fireEvent, getByTestId } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import Joke from './Joke';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+afterEach(() => {
+  cleanup();
+  console.error.mockClear();
+})
+
+console.error = jest.fn();
+
+test('<Joke />', () =>{
+  render(<Joke />);
+  expect(console.error).toHaveBeenCalled();
+})
+
+const joke = {
+  joke: 'Chuck Norris is funny',
+}
+
+test('<Joke /> with joke', () => {
+  const { debug } = render(
+  <MemoryRouter>
+    <Joke joke = {joke}/>
+  </MemoryRouter>,
+  );
+  debug();
+})
+
+
+

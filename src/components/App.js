@@ -8,7 +8,6 @@ class App extends Component {
   }
   onRandom = () => {
     window.location.reload(false);
-    console.log("random")
   }
 
   render() {

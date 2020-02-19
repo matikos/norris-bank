@@ -30,7 +30,7 @@ componentDidMount() {
   render() {
     return (
       <div>
-        <p>{this.state.joke}</p>
+        <p data-testid="joke-content">{this.state.joke}</p>
       </div>
     );
   }

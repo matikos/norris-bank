@@ -47,10 +47,6 @@ class CustomName extends Component {
   }
 
   searchJoke = () => {
-    this.setState({
-      input: [],
-    })
-
     const url = `http://api.icndb.com/jokes/random?escape=javascript&firstName=${this.state.firstName}&lastName=${this.state.secondName}`;
 
     fetch(url)
@@ -64,6 +60,8 @@ class CustomName extends Component {
   }
   
   render() {
+    let paragraph = (/\S/.test(this.state.input)) ? <p>{this.state.customJoke}</p> : null
+
     return (
       <div className="CustName">
         <header className="CustName-header">
@@ -72,11 +70,11 @@ class CustomName extends Component {
         <hr />
         <form onSubmit={this.handleSubmit}>
           <label>
-            <input name="name" type="text" placeholder="Full Name" onChange={this.handleChange} />
+            <input name="name" type="text" value={this.state.input} placeholder="Full Name" onChange={this.handleChange} />
           </label>
           <input type="submit" value="Search" onClick={() => this.searchJoke()}/>
         </form>
-        {this.validateInput ? (<p>{this.state.customJoke}</p>) : null}
+        {paragraph}
         <button onClick={() => this.onHome()}>Home</button>
       </div>
     );
