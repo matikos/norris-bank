@@ -34,8 +34,6 @@ class CustomName extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.validateInput())
-    console.log(this.state.input)
   }
 
   validateInput = (e) => {
@@ -60,7 +58,7 @@ class CustomName extends Component {
   }
   
   render() {
-    let paragraph = (/\S/.test(this.state.input)) ? <p>{this.state.customJoke}</p> : null
+    let paragraph = (/\S/.test(this.state.input)) ? <p data-testid="customName-content">{this.state.customJoke}</p> : null
 
     return (
       <div className="CustName">
@@ -72,7 +70,7 @@ class CustomName extends Component {
           <label>
             <input name="name" type="text" value={this.state.input} placeholder="Full Name" onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Search" onClick={() => this.searchJoke()}/>
+          <input type="submit" value="Search" data-testid="submit" onClick={() => this.searchJoke()}/>
         </form>
         {paragraph}
         <button onClick={() => this.onHome()}>Home</button>

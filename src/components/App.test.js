@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, getByTestId } from '@testing-library/react';
+import { render, cleanup, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Joke from './Joke';
 
@@ -10,9 +10,9 @@ afterEach(() => {
 
 console.error = jest.fn();
 
-test('<Joke />', () =>{
+test('<Joke>', () =>{
   render(<Joke />);
-  expect(console.error).toHaveBeenCalled();
+  expect(console.error).not.toHaveBeenCalled();
 })
 
 const joke = {
