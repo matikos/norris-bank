@@ -9,6 +9,8 @@ On the Custom Name screen you following:
 - "Search" button that will return Chuck Norris joke with name from the input suplanting that of the legend.
 - "Home" button that will take you to Home screen.
 
+*At this moment some of the test might fail and thus need refactoring*
+
 Jokes are courtesy of http://www.icndb.com
 
 
