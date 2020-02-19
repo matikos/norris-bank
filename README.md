@@ -11,7 +11,7 @@ On the Custom Name screen you following:
 
 *At this moment some of the test might fail and thus need refactoring*
 
-Jokes are courtesy of http://www.icndb.com
+Jokes are courtesy of 'http://www.icndb.com'
 
 
 If not for Chuck Norris this app would be much better had it not taken 4s for chuck Norris to do infinity loop.
